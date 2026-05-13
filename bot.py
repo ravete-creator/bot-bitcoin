@@ -5,12 +5,12 @@ TOKEN = "8970298887:AAG6tLyBCnTNMLJkqSZIbd45NeLqJUDJk8I"
 CHAT_ID = "929309450"
 
 def pegar_preco_bitcoin():
-    url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
+    url = "https://api.coinbase.com/v2/prices/BTC-USD/spot"
 
     resposta = requests.get(url)
     dados = resposta.json()
 
-    preco = dados["price"]
+    preco = dados["data"]["amount"]
 
     return preco
 
